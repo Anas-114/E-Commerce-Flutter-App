@@ -21,20 +21,20 @@ class SplashScreenWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _buildLogo(),
+            Logo(),
             const SizedBox(height: 20),
-            _buildTitle(),
+            Title(),
             const SizedBox(height: 8),
-            _buildTagline(),
+            Tagline(),
             const SizedBox(height: 50),
-            _buildLoadingText(),
+            LoadingText(),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildLogo() {
+  Widget Logo() {
     return Container(
       width: 100,
       height: 100,
@@ -57,7 +57,7 @@ class SplashScreenWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildTitle() {
+  Widget Title() {
     return const Text(
       'MARKET HUB',
       style: TextStyle(
@@ -76,7 +76,7 @@ class SplashScreenWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildTagline() {
+  Widget Tagline() {
     return const Text(
       'Your Shopping Destination',
       style: TextStyle(
@@ -88,7 +88,7 @@ class SplashScreenWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildLoadingText() {
+  Widget LoadingText() {
     return const Text(
       'Setting up your marketplace...',
       style: TextStyle(

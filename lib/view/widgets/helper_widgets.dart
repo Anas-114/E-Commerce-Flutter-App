@@ -49,12 +49,12 @@ class ProductDetailsPage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: Colors.tealAccent, // background color
+                color: Colors.tealAccent,  
                 border: Border.all(
-                  color: Colors.green, // border color
+                  color: Colors.green,  
                   width: 2,
                 ),
-                borderRadius: BorderRadius.circular(12), // rounded corners
+                borderRadius: BorderRadius.circular(12),  
               ),
               child: Text(
                 '\$${price.toStringAsFixed(2)}',
@@ -154,7 +154,7 @@ Widget CartCard({
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Image section (flexible height)
+          
             Expanded(
               child: ClipRRect(
                 borderRadius: const BorderRadius.vertical(
@@ -179,8 +179,7 @@ Widget CartCard({
                 ),
               ),
             ),
-
-            // Product info section
+ 
             Container(
               color: Colors.amber.shade50,
               padding: const EdgeInsets.all(8),

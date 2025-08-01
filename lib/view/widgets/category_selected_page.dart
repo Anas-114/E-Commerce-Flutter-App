@@ -21,7 +21,7 @@ class _CategoryProductsPageState extends State<CategoryProductsPage> {
       Provider.of<CategoryProvider>(
         context,
         listen: false,
-      ).fetchProductsByCategory(widget.category);
+      ).ProductsCategory(widget.category);
     });
   }
 

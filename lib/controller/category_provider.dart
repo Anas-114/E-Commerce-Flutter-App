@@ -10,12 +10,12 @@ class CategoryProvider with ChangeNotifier {
   List<ProductModel> categoryProducts = [];
   bool isCategoryLoading = false;
 
-  Future<void> fetchProductsByCategory(String category) async {
+  Future<void> ProductsCategory(String category) async {
     isCategoryLoading = true;
     notifyListeners();
 
     try {
-      categoryProducts = await categoryService.fetchByCategory(category);
+      categoryProducts = await categoryService.Category(category);
     } catch (e) {
       print("Error in provider: $e");
     }

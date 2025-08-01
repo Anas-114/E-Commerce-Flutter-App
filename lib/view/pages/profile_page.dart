@@ -1,6 +1,5 @@
-
+import 'package:audioloop/view/auth/login_page.dart';
 import 'package:flutter/material.dart';
-
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -39,24 +38,22 @@ class ProfilePage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
 
-            // Profile Options
-            buildProfileOption(Icons.person_outline, 'Edit Profile'),
-            buildProfileOption(Icons.location_on_outlined, 'Addresses'),
-            buildProfileOption(Icons.payment_outlined, 'Payment Methods'),
-            buildProfileOption(Icons.history_outlined, 'Order History'),
-            buildProfileOption(Icons.notifications_outlined, 'Notifications'),
-            buildProfileOption(Icons.help_outline, 'Help & Support'),
-            buildProfileOption(Icons.logout, 'Logout', isLogout: true),
+            buildProfileOption(Icons.logout, 'Logout', isLogout: true , context: context),
           ],
         ),
       ),
     );
   }
-
-  
 }
-// Place this OUTSIDE the ProfilePage class (below or above)
-Widget buildProfileOption(IconData icon, String title, {bool isLogout = false, VoidCallback? onTap}) {
+
+
+Widget buildProfileOption(
+  IconData icon,
+  String title, {
+  bool isLogout = false,
+  VoidCallback? onTap,
+  required BuildContext context,
+}) {
   return Card(
     margin: const EdgeInsets.only(bottom: 8),
     child: ListTile(
@@ -69,7 +66,9 @@ Widget buildProfileOption(IconData icon, String title, {bool isLogout = false, V
         ),
       ),
       trailing: const Icon(Icons.chevron_right),
-      onTap: onTap ?? () {},
+onTap: () {
+  Navigator.pushReplacement(context, MaterialPageRoute(builder:  (context) => LoginPage(),));
+},
     ),
   );
 }

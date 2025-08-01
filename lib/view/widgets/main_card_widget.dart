@@ -18,14 +18,14 @@ Widget ECommerceCard({
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Image section
+      
           ClipRRect(
             borderRadius: const BorderRadius.vertical(
               top: Radius.circular(5),
             ),
             child: Container(
               width: double.infinity,
-              height: 120, // smaller height
+              height: 120, 
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.orangeAccent.shade100,
@@ -42,9 +42,8 @@ Widget ECommerceCard({
               ),
             ),
           ),
-
-          // Product info section
-          Expanded( // 👈 Makes sure the content below takes available space
+ 
+          Expanded( 
             child: Container(
               color: Colors.amber.shade50,
               padding: const EdgeInsets.all(8),
@@ -66,7 +65,7 @@ Widget ECommerceCard({
                       color: Colors.green,
                     ),
                   ),
-                  const Spacer(), // 👈 Pushes button to bottom
+                  const Spacer(),  
                   SizedBox(
                     height: 40,
                     width: double.infinity,

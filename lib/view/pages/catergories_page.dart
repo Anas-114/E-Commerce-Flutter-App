@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key});
 
-  IconData getCategoryIcon(String name) {
+  IconData CategoryIcon(String name) {
     switch (name.toLowerCase()) {
       case 'electronics':
         return Icons.devices_outlined;
@@ -83,7 +83,7 @@ class CategoriesPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: Icon(
-                            getCategoryIcon(name),
+                            CategoryIcon(name),
                             size: 32,
                             color: Colors.orange[600],
                           ),

@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 class SearchPage extends StatelessWidget {
   SearchPage({super.key});
-  final TextEditingController _controller = TextEditingController();
+  final TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +25,13 @@ class SearchPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(12),
             child: TextField(
-              controller: _controller,
+              controller: controller,
               decoration: InputDecoration(
-                hintText: 'Search...',
+                hintText: 'Search here',
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.search),
                   onPressed: () {
-                    final query = _controller.text.trim();
+                    final query = controller.text.trim();
                     if (query.isNotEmpty) {
                       searchProvider.search(query);
                     }
@@ -41,16 +41,10 @@ class SearchPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              onSubmitted: (value) {
-                final query = value.trim();
-                if (query.isNotEmpty) {
-                  searchProvider.search(query);
-                }
-              },
             ),
           ),
 
-          // Results or loader
+       
           Expanded(
             child: Builder(
               builder: (_) {
@@ -66,12 +60,13 @@ class SearchPage extends StatelessWidget {
                 } else {
                   return GridView.builder(
                     padding: const EdgeInsets.all(8),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      childAspectRatio: 0.7,
-                    ),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 8,
+                          mainAxisSpacing: 8,
+                          childAspectRatio: 0.7,
+                        ),
                     itemCount: searchProvider.searchedlist.length,
                     itemBuilder: (context, index) {
                       final product = searchProvider.searchedlist[index];
@@ -91,7 +86,8 @@ class SearchPage extends StatelessWidget {
                                 description: product.description,
                                 category: product.category,
                                 image: product.image,
-                                onAddToCart: () => cartProvider.addproduct(product),
+                                onAddToCart: () =>
+                                    cartProvider.addproduct(product),
                               ),
                             ),
                           );

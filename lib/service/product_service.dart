@@ -5,7 +5,7 @@ import '../model/product_model.dart';
 class CatService {
   final Dio dio = Dio();
 
-  Future<List<ProductModel>> fetchByCategory(String category) async {
+  Future<List<ProductModel>>  Category(String category) async {
     try {
       final formattedCategory = category.toLowerCase().replaceAll(' ', '%20');
       final String url = ConstantsUrl().category(formattedCategory);

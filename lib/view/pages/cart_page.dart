@@ -50,7 +50,7 @@ class CartPage extends StatelessWidget {
                 ),
               ),
 
-              // Footer with total items and price
+ 
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16,
@@ -94,9 +94,7 @@ class CartPage extends StatelessWidget {
         },
       ),
     );
-  }
-
-  // Empty cart UI
+  } 
   Widget ifNotAdded() {
     return Center(
       child: Column(
